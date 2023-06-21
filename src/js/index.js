@@ -18,7 +18,7 @@ fetchBreeds().then(data => {
 
 
 const onSelectClick = event => {
-    breedId = event.target.value;
+    const breedId = event.target.value;
     fetchCatByBreed(breedId).then(data => createMarkup(data)).catch(err => console.log(err));
 }
 
