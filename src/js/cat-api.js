@@ -3,7 +3,6 @@ const API_KEY = 'live_mf57CBssdwkpCTgrPlzmgbxRI0rP2iUv5nIBiAm1pdJQ9OSHLPuMunDQOa
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 
-
 export const fetchBreeds = function (){
     return fetch(`${BASE_URL}breeds?api-key=${API_KEY}`).
     then(response => {
@@ -20,7 +19,6 @@ export const fetchBreeds = function (){
         return response.json()
     })
 }
-
   
 
 export const fetchCatByBreed = function (breedId){
@@ -39,8 +37,7 @@ export const fetchCatByBreed = function (breedId){
       }
       return response.json()
   })
-  .catch(err => console.log(err));
-    
+  .catch(err => console.log(err));  
 }
 
 
