@@ -4,15 +4,41 @@ body {
 
 .breed-select {
   display: inline-block;
-  width: 160px;
-  height: 34px;
+  width: 350px;
+  height: 50px;
   line-height: 30px;
   position: relative;
+  font-family: 'Bagel Fat One', cursive;
+  color: #660033;
+  font-size: 26px;
+  background-color: transparent;
+  border: dashed #660033;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #660033 transparent;
+}
+.breed-select option {
+  background-color: #fae1f4;
+}
+
+.breed-select::-webkit-scrollbar {
+  width: 8px;
+}
+
+.breed-select::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.breed-select::-webkit-scrollbar-thumb {
+  background-color: #660033;
 }
 
 .cat-info {
-  width: 1360px;
-  margin: 50px;
+  width: 960px;
+  margin: 30px auto;
   display: flex;
   background-color: #edfffd;
   border-radius: 30px;
@@ -20,47 +46,76 @@ body {
 }
 
 .breed-image {
-  width: 800px;
+  width: 500px;
   border-radius: 30px 0 0 30px;
 }
 .breed-container {
-  width: 500px;
+  width: 400px;
   padding: 20px;
 }
 .breed-name {
   font-family: 'Bagel Fat One', cursive;
-  font-size: 56px;
+  font-size: 46px;
   color: #cc0060;
 }
 .breed-temperament {
   font-family: 'Montserrat', sans-serif;
   color: #660033;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.5;
 }
 .breed-description {
   font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   color: #404040;
   line-height: 1.5;
 }
 
 .loader {
-  position: relative;
-  width: 100px;
-  height: 100px;
+  width: 48px;
+  height: 48px;
+  border: 3px dotted #660033;
+  border-style: solid solid dotted dotted;
+  border-radius: 50%;
+  display: inline-block;
+  position: fixed;
+  left: 390px;
+  top: 28px;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px dotted#cc0060;
+  border-style: solid solid dotted;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 1s linear infinite;
+  transform-origin: center center;
 }
 
-.loader:before,
-.loader:after {
-  content: '';
-  border-radius: 50%;
-  position: absolute;
-  inset: 0;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-.loader:after {
-  box-shadow: 0 2px 0 #ff3d00 inset;
-  animation: rotate 2s linear infinite;
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
